@@ -2,10 +2,8 @@
 
 This project was generated using [Nx](https://nx.dev).
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
-
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
-
+git remote add origin https://github.com/xavierclotet/monorepo.git
+git push -u origin master
 
 
-nx 
+* Despres de tocar algun fitxer , executes `yarn nx affected:test --parallel` i tirara els test q toquin.
