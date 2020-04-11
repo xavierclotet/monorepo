@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { take, orderBy, map } from 'lodash-es';
+import { take, orderBy, map, chain } from 'lodash-es';
 
 const players = [
   { player: 'Aleksandar Mitrovic', goals: 10, shots: 118 },
@@ -20,15 +20,25 @@ const players = [
   styleUrls: ['./mylib.component.css']
 })
 export class MylibComponent implements OnInit {
-  sorted: any[];
+  showAlert = false;
+  res;
+  /* sorted: any[];
   top3: any[];
-  result: any;
+  result: any; */
   constructor() { }
 
   ngOnInit(): void {
-    this.sorted = orderBy(players, ['goals', 'shots'], ['desc', 'asc']);
+   /*  this.sorted = orderBy(players, ['goals', 'shots'], ['desc', 'asc']);
     this.top3= take(this.sorted, 3);
-    this.result = map(this.top3, 'player');
+    this.result = map(this.top3, 'player'); */
+
+    this.res = chain(players)
+      .orderBy(['goals', 'shots'], ['desc', 'asc'])
+      .take(3)
+      .map('player');
+
   }
+
+
 
 }

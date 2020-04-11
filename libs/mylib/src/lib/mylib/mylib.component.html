@@ -3,12 +3,33 @@
 </h2>
 
 <pre>
-  sorted: {{ sorted | json }}
+  res: {{ res | json }}
 </pre>
 
-<pre>
-  TOP 3:
-  {{ top3 | json }}
 
-  {{ result }}
-</pre>
+
+<button nz-button nzType="primary">Primary</button>
+<button nz-button nzType="default">Default</button>
+<button nz-button nzType="dashed">Dashed</button>
+<button nz-button nzType="danger">Danger</button>
+<button nz-button nzType="link">Link</button>
+<br />
+<button nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="search"></i></button>
+<button nz-button nzType="primary" nzShape="circle">X</button>
+<br />
+<button nz-button nzType="primary"><i nz-icon nzType="search"></i>Search</button>
+<button nz-button nzType="danger" nzShape="circle"><i nz-icon nzType="search"></i></button>
+<button nz-button nzType="default"><i nz-icon nzType="search"></i>Search</button>
+<br />
+<button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="search"></i></button>
+<button nz-button nzType="default"><i nz-icon nzType="search"></i>Search</button>
+<button nz-button nzType="dashed" nzShape="circle" (click)="showAlert = true"><i nz-icon nzType="search"></i></button>
+<button nz-button nzType="dashed"><i nz-icon nzType="search"></i>Search</button>
+
+<nz-alert *ngIf="showAlert"
+      nzType="info"
+      nzMessage="Informational Notes"
+      nzDescription="Additional description and informations about copywriting."
+      nzShowIcon
+    >
+    </nz-alert>
