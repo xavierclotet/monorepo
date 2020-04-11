@@ -21,8 +21,19 @@
             "polyfills": "apps/test/src/polyfills.ts",
             "tsConfig": "apps/test/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/test/src/favicon.ico", "apps/test/src/assets"],
-            "styles": ["apps/test/src/styles.scss"],
+            "assets": [
+              "apps/test/src/favicon.ico",
+              "apps/test/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "apps/test/src/theme.less",
+              "apps/test/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -80,7 +91,10 @@
               "apps/test/tsconfig.app.json",
               "apps/test/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/test/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/test/**"
+            ]
           }
         },
         "test": {
@@ -115,8 +129,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/test-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/test-e2e/**"]
+            "tsConfig": [
+              "apps/test-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/test-e2e/**"
+            ]
           }
         }
       }
@@ -146,7 +165,10 @@
               "libs/mylib/tsconfig.lib.json",
               "libs/mylib/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/mylib/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/mylib/**"
+            ]
           }
         },
         "test": {
