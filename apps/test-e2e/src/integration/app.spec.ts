@@ -4,10 +4,12 @@ describe('test', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+    cy.contains('xavitest-mylib');
+  });
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to test!');
+  it('should displayinfo message', () => {
+    cy.get('#search-button').click();
+
+    cy.contains('Informational Notes');
   });
 });

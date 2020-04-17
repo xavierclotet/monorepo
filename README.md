@@ -34,3 +34,9 @@ Apps put the pieces together
 # create plain TS lib
 
 `yarn nx g @nrwl/workspace:lib api-interface`
+
+# Test affected changes
+`yarn nx affected:test`
+
+and later commit changes if tests pass
+
