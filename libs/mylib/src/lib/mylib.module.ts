@@ -4,6 +4,7 @@ import { MylibComponent } from './mylib/mylib.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { PageTitleComponent } from './page-title/page-title.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -11,9 +12,9 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
     NzIconModule,
     NzAlertModule
   ],
-  declarations: [MylibComponent],
+  declarations: [MylibComponent, PageTitleComponent],
   exports: [
-    MylibComponent
+    MylibComponent, PageTitleComponent
   ]
 })
 export class MylibModule {}

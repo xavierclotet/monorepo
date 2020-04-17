@@ -28,6 +28,9 @@
     },
     "mylib": {
       "tags": []
+    },
+    "test-interface": {
+      "tags": []
     }
   }
 }

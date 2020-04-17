@@ -30,10 +30,7 @@
                 "output": "/assets/"
               }
             ],
-            "styles": [
-              "apps/test/src/theme.less",
-              "apps/test/src/styles.scss"
-            ],
+            "styles": ["apps/test/src/theme.less", "apps/test/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -91,10 +88,7 @@
               "apps/test/tsconfig.app.json",
               "apps/test/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/test/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/test/**"]
           }
         },
         "test": {
@@ -129,13 +123,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/test-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/test-e2e/**"
-            ]
+            "tsConfig": ["apps/test-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/test-e2e/**"]
           }
         }
       }
@@ -165,10 +154,7 @@
               "libs/mylib/tsconfig.lib.json",
               "libs/mylib/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/mylib/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/mylib/**"]
           }
         },
         "test": {
@@ -184,6 +170,32 @@
       "schematics": {
         "@nrwl/angular:component": {
           "style": "scss"
+        }
+      }
+    },
+    "test-interface": {
+      "root": "libs/test-interface",
+      "sourceRoot": "libs/test-interface/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/test-interface/tsconfig.lib.json",
+              "libs/test-interface/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/test-interface/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/test-interface/jest.config.js",
+            "tsConfig": "libs/test-interface/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
         }
       }
     }

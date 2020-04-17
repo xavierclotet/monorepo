@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@xavitest/mylib": ["libs/mylib/src/index.ts"]
+      "@xavitest/mylib": ["libs/mylib/src/index.ts"],
+      "@xavitest/test-interface": ["libs/test-interface/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
